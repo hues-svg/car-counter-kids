@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Liczenie samochodów</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="menu-screen" class="screen card active" aria-label="Menu gry">
+        <div class="menu-icon" aria-hidden="true">🚗</div>
+        <h1>Liczenie samochodów</h1>
+        <p>
+          Sprawdź swój refleks i oko do szczegółów. Policz auta, wpisz wynik i bij własny rekord!
+        </p>
+        <button id="play-btn" class="btn btn-primary">Graj</button>
+      </section>
+
+      <section id="game-screen" class="screen" aria-label="Ekran gry" aria-hidden="true">
+        <header class="hud card">
+          <div class="hud-item"><span>Runda</span><strong id="round-value">1</strong></div>
+          <div class="hud-item"><span>Wynik</span><strong id="score-value">0</strong></div>
+          <div class="hud-item"><span>Czas</span><strong id="time-value">14</strong></div>
+          <div class="hud-item"><span>Rekord</span><strong id="best-value">0</strong></div>
+        </header>
+
+        <section class="game-card card">
+          <div id="cars-area" class="cars-area" aria-live="polite"></div>
+
+          <div class="answer-row">
+            <label for="answer-input">Ile jest aut?</label>
+            <input
+              id="answer-input"
+              type="number"
+              inputmode="numeric"
+              min="0"
+              placeholder="Wpisz liczbę"
+              autocomplete="off"
+            />
+          </div>
+
+          <p id="message" class="message" aria-live="assertive"></p>
+
+          <div class="actions">
+            <button id="check-btn" class="btn btn-primary">Sprawdź</button>
+            <button id="next-btn" class="btn" disabled>Następna runda</button>
+            <button id="restart-btn" class="btn">Restart</button>
+            <button id="menu-btn" class="btn btn-ghost">Menu</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
